@@ -16,12 +16,12 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor (private val productRepository: ProductRepository) : ViewModel() {
 
+    private val _products: MutableLiveData<ApiResponse<ProductResponse>> = MutableLiveData()
+    val products: LiveData<ApiResponse<ProductResponse>> = _products
+
     init {
         getProducts()
     }
-
-    private val _products: MutableLiveData<ApiResponse<ProductResponse>> = MutableLiveData()
-    val products: LiveData<ApiResponse<ProductResponse>> = _products
 
     fun getProducts() {
         viewModelScope.launch {
