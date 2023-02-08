@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         private const val TAG = "MainActivity"
     }
 
+    //test
+
     private val viewModel: MainViewModel by viewModels()
     lateinit var binding: ActivityMainBinding
 
